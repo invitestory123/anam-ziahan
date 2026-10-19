@@ -5,21 +5,21 @@
 
 window.WEDDING_DATA = {
   couple: {
-    bride: {
-      first: "Anam",
-      last: "Sayeed",
-      script: "Sayeed",
-      parents: "Daughter of Haji Md Sayeed Alam",
-      note: "Daughter of Haji Md Sayeed Alam — a heart full of grace, kindness and quiet light.",
-      photo: "./editable/assets/bride.jpg",
-    },
     groom: {
       first: "Zishan",
       last: "",
       script: "Perwez",
       parents: "Son of Shahid Perwez",
       note: "Son of Shahid Perwez — steady, devoted and blessed with warmth.",
-      photo: "./editable/assets/groom.jpg",
+      photo: "",
+    },
+    bride: {
+      first: "Anam",
+      last: "Sayeed",
+      script: "Sayeed",
+      parents: "Daughter of Haji Md Sayeed Alam",
+      note: "Daughter of Haji Md Sayeed Alam — a heart full of grace, kindness and quiet light.",
+      photo: "",
     },
   },
 
@@ -78,13 +78,13 @@ window.WEDDING_DATA = {
   complements: "Shahid Perwez & Sanaullah",
 
   contacts: [
-    { name: "Shahid Perwez", phone: "9304292121" },
-    { name: "Sanaullah", phone: "8434824050" },
+    { name: "Shahid Perwez", phone: "8434824050" },
+    { name: "Sanaullah", phone: "9304292121" },
   ],
 
   images: {
-    bride: "./editable/assets/bride.jpg",
-    groom: "./editable/assets/groom.jpg",
+    bride: "",
+    groom: "",
     floralCorner: "./editable/assets/floral-corner.png",
     goldFlourish: "./editable/assets/gold-flourish.png",
     masjid: "./editable/assets/masjid.png",

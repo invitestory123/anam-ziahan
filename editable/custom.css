@@ -54,43 +54,139 @@ body {
   box-shadow: 0 10px 30px -10px rgba(184, 134, 11, 0.12) !important;
 }
 
+/* =========================================================
+   Luxury Floating Music Player Widget
+   ========================================================= */
+.wedding-music-widget {
+  position: fixed;
+  bottom: max(1.5rem, env(safe-area-inset-bottom, 20px));
+  right: 1.25rem;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  pointer-events: auto;
+}
+
+/* Prompt Banner */
+.music-prompt {
+  background: linear-gradient(135deg, rgba(255, 250, 240, 0.96), rgba(246, 235, 210, 0.94));
+  border: 1px solid rgba(212, 175, 55, 0.65);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18), 0 0 12px rgba(212, 175, 55, 0.25);
+  padding: 0.45rem 0.9rem;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #7a521e;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: promptPulse 2.4s ease-in-out infinite;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.music-prompt.hidden {
+  display: none !important;
+}
+
+.music-prompt.fade-out {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+@keyframes promptPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18), 0 0 8px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25), 0 0 16px rgba(212, 175, 55, 0.5);
+  }
+}
+
 /* Floating Music Control Button */
 .music-toggle-btn {
-  position: fixed;
-  top: 1.25rem;
-  right: 1.25rem;
-  z-index: 9999;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255, 248, 235, 0.95), rgba(240, 225, 195, 0.92));
-  border: 1.5px solid rgba(212, 175, 55, 0.6);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25), 0 0 12px rgba(212, 175, 55, 0.35);
+  background: linear-gradient(135deg, rgba(255, 250, 240, 0.98), rgba(242, 228, 198, 0.94));
+  border: 1.8px solid rgba(212, 175, 55, 0.7);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25), 0 0 14px rgba(212, 175, 55, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #936528;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #8c5d22;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .music-toggle-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 16px rgba(212, 175, 55, 0.55);
+  transform: scale(1.1);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3), 0 0 18px rgba(212, 175, 55, 0.6);
+  border-color: #d4af37;
 }
 
 .music-toggle-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
 }
 
-.music-toggle-btn.is-playing svg {
-  animation: spin 5s linear infinite;
+/* Icon Switching */
+.music-toggle-btn.is-playing .music-icon-playing {
+  display: flex;
+}
+.music-toggle-btn.is-playing .music-icon-paused {
+  display: none;
 }
 
-@keyframes spin {
+.music-toggle-btn.is-paused .music-icon-playing {
+  display: none;
+}
+.music-toggle-btn.is-paused .music-icon-paused {
+  display: flex;
+  opacity: 0.85;
+}
+
+/* Animated Sound Wave Equalizer */
+.music-icon-playing {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3.5px;
+  width: 20px;
+  height: 18px;
+}
+
+.music-bar {
+  width: 3px;
+  background: linear-gradient(to top, #9e6d2b, #d4af37);
+  border-radius: 2px;
+  display: block;
+}
+
+.music-toggle-btn.is-playing .bar-1 {
+  animation: eqBar 1s ease-in-out infinite alternate;
+}
+.music-toggle-btn.is-playing .bar-2 {
+  animation: eqBar 1.2s ease-in-out infinite 0.2s alternate;
+}
+.music-toggle-btn.is-playing .bar-3 {
+  animation: eqBar 0.9s ease-in-out infinite 0.4s alternate;
+}
+
+@keyframes eqBar {
+  0% {
+    height: 4px;
+  }
   100% {
-    transform: rotate(360deg);
+    height: 17px;
   }
 }

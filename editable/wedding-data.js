@@ -85,6 +85,10 @@ window.WEDDING_DATA = {
   images: {
     bride: "",
     groom: "",
+    background: "./editable/assets/background.jpg",
+    stageBackground: "./editable/assets/stage-background.jpg",
+    backgroundVideo: "./editable/assets/background.mp4",
+    backgroundMusic: "./editable/assets/background-music.mp3",
     floralCorner: "./editable/assets/floral-corner.png",
     goldFlourish: "./editable/assets/gold-flourish.png",
     masjid: "./editable/assets/masjid.png",

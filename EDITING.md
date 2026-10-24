@@ -29,9 +29,14 @@ Edit `events` and `wedding` in `editable/wedding-data.js`:
 
 ### Photos & Accents
 Replace files directly in `editable/assets/` or update `images`:
+- Royal Stage Background (from Reel): `editable/assets/background.jpg`
+- Stage Background Video: `editable/assets/background.mp4`
+- Ambient Background Music: `editable/assets/background-music.mp3`
 - Bride photo: `editable/assets/bride.jpg`
 - Groom photo: `editable/assets/groom.jpg`
 - Decorative graphics: `masjid.png`, `floral-corner.png`, `gold-flourish.png`, `mandala.png`, `paper-texture.jpg`
+- Custom styling & overrides: `editable/custom.css`
+- Music player controller: `editable/music-player.js`
 
 ---
 

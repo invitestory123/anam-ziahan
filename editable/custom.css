@@ -1,0 +1,96 @@
+/* 
+ * custom.css — Custom background & royal stage styling 
+ * Sourced directly from Instagram Reel: https://www.instagram.com/reel/DPD9oN1imQp/
+ */
+
+/* Outer viewport styling: deep warm vignette backdrop with stage ambiance */
+body {
+  background-color: #120f0d;
+  background-image: 
+    radial-gradient(ellipse at center, rgba(20, 16, 12, 0.72) 0%, rgba(10, 8, 6, 0.96) 100%),
+    url('./assets/background.jpg') !important;
+  background-attachment: fixed !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  min-height: 100vh;
+}
+
+/* Central invitation container */
+#root > main {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.45), 0 0 100px rgba(184, 134, 11, 0.18);
+  background-color: #faf6f0;
+}
+
+/* Hero section: Set the royal Islamic archway & stage as background */
+#root > main > section:first-of-type {
+  background-image: url('./assets/background.jpg') !important;
+  background-position: top center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+}
+
+/* Hide the mismatched corner lilies in hero so the reel's authentic roses shine */
+#root > main > section:first-of-type > img[src*="floral-corner"] {
+  display: none !important;
+}
+
+/* Enhance text legibility in the Hero against the stage background */
+#root > main > section:first-of-type .relative.z-10 {
+  background: radial-gradient(ellipse at center, rgba(254, 252, 248, 0.9) 0%, rgba(254, 252, 248, 0.7) 65%, rgba(254, 252, 248, 0) 100%);
+  padding: 2.2rem 1.25rem 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Frosted glass cards for remaining sections for seamless luxury aesthetic */
+#root > main > section:not(:first-of-type) .bg-card,
+#root > main > section:not(:first-of-type) [class*="bg-card"] {
+  background-color: rgba(255, 253, 248, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.22) !important;
+  box-shadow: 0 10px 30px -10px rgba(184, 134, 11, 0.12) !important;
+}
+
+/* Floating Music Control Button */
+.music-toggle-btn {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 9999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 248, 235, 0.95), rgba(240, 225, 195, 0.92));
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25), 0 0 12px rgba(212, 175, 55, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #936528;
+}
+
+.music-toggle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 16px rgba(212, 175, 55, 0.55);
+}
+
+.music-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.music-toggle-btn.is-playing svg {
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
